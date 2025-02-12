@@ -8,7 +8,7 @@ export default function Home() {
       <div className="m-10">
         <SignedOut>
           <SignInButton />
-        </SignedOut>
+        </SignedOut> 
         <SignedIn>
           <UserButton />
         </SignedIn>
