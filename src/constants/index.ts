@@ -4,7 +4,7 @@ export interface SideBarLinks{
     imgUrl:string
 }
 
-export   const sideBarLinks:SideBarLinks[] = [
+export  const sideBarLinks:SideBarLinks[] = [
     {
         label:"Home",
         route:"/",
