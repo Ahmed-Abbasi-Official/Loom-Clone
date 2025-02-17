@@ -8,17 +8,24 @@ import {
 import {  ReactNode, useEffect, useState } from "react";
 import { tokenProvider } from "../actions/stream.actions";
 import Loader from "@/components/Loader";
+import { useRouter } from "next/navigation";
   
   const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
   
   
 const StremVideoProvider = ({children}:{children:ReactNode}) => {
     const [videoClient, setVideoClient] = useState<StreamVideoClient>()
+    const router = useRouter()
 
     const {user , isLoaded}=useUser();
+    
+
+    
 
     useEffect(() => {
-      if (!isLoaded || !user) return;
+      if (!isLoaded || !user) {
+        return router.push('/sign-in')
+      };
       
       if (!apiKey) {
           console.error("API Key is missing");
@@ -41,6 +48,7 @@ const StremVideoProvider = ({children}:{children:ReactNode}) => {
           console.error("Error creating StreamVideoClient:", error);
       }
   }, [user, isLoaded]);
+  if(!isLoaded) return <p>Laoding ...</p>
   
     
     if(!videoClient) return <Loader/>
