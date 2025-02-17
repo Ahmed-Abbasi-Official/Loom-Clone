@@ -5,7 +5,7 @@ import {
     StreamVideoClient,
     StreamVideo
   } from "@stream-io/video-react-sdk";
-import { Children, ReactNode, useEffect, useState } from "react";
+import {  ReactNode, useEffect, useState } from "react";
 import { tokenProvider } from "../actions/stream.actions";
 import Loader from "@/components/Loader";
   
@@ -32,8 +32,9 @@ const StremVideoProvider = ({children}:{children:ReactNode}) => {
         })
         setVideoClient(client);
     },[user,isLoaded])
+    
+    // if(!videoClient) return <Loader/>
 
-    if(!videoClient) return <Loader/>
 
     return (
       <StreamVideo client={videoClient}>
