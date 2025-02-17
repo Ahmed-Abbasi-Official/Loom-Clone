@@ -17,23 +17,33 @@ const StremVideoProvider = ({children}:{children:ReactNode}) => {
 
     const {user , isLoaded}=useUser();
 
-    useEffect(()=>{
-        if(!isLoaded || !user) return ;
-        if(!apiKey) throw new Error("API key is missing");
-
-        const client = new StreamVideoClient({
-            apiKey,
-            user:{
-                id:user?.id,
-                name:user.username || user?.id,
-                image:user.imageUrl
-            },
-            tokenProvider
-        })
-        setVideoClient(client);
-    },[user,isLoaded])
+    useEffect(() => {
+      if (!isLoaded || !user) return;
+      
+      if (!apiKey) {
+          console.error("API Key is missing");
+          return;
+      }
+  
+      try {
+          const client = new StreamVideoClient({
+              apiKey,
+              user: {
+                  id: user?.id,
+                  name: user.username || user?.id,
+                  image: user.imageUrl
+              },
+              tokenProvider
+          });
+  
+          setVideoClient(client);
+      } catch (error) {
+          console.error("Error creating StreamVideoClient:", error);
+      }
+  }, [user, isLoaded]);
+  
     
-    // if(!videoClient) return <Loader/>
+    if(!videoClient) return <Loader/>
 
 
     return (
