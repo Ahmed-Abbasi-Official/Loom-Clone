@@ -17,6 +17,20 @@ const config: Config = {
 			blue:{
 				1:'#0e78f9'
 			},
+			sky:{
+				1:'#c9ddff',
+				2:'#ecf0ff',
+				3:'#5ffcff'
+			},
+			orange:{
+				1:'#ff742e'
+			},
+			purple:{
+				1:'#830ef9'
+			},
+			yellow:{
+				1:'#f9A90E'
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -58,6 +72,9 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		backgroundImage:{
+			hero:"url('/images/hero-background.png')"
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

@@ -4,11 +4,11 @@ import React, { ReactNode } from 'react'
 
 const HomeLayout = ({children}:{children:ReactNode}) => {
   return (
-    <main className='relative'>
+    <main className='relative  '>
         <Navbar/>
-        <div className='flex h-[calc(100vh-32px)]'>
+        <div className='flex h-[calc(100vh-32px)] '>
             <SideBar/>
-            <section className='flex flex-1 min-h-screen flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14'>
+            <section className='flex flex-1 h-[calc(100vh-32px)] overflow-y-auto flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14'>
                 <div className='w-full'>
                     {children}
                 </div>

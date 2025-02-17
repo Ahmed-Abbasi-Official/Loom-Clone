@@ -1,7 +1,30 @@
+import { ReactNode } from "react";
+
 export interface SideBarLinks{
     label:string,
     route:string,
-    imgUrl:string
+    imgUrl:string;
+}
+
+export interface HomeCardType{
+    img:string,
+    title:string;
+    description:string;
+    className:string;
+    handleClick:()=>void;
+
+}
+
+export interface MeetingModalProps {
+    isOpen:boolean;
+    className?:string;
+    title:string;
+    children?:ReactNode
+    buttonText?:string
+    image?:string
+    buttonIcon?:string
+    handleClick:()=>void;
+    onClose:()=>void;
 }
 
 export  const sideBarLinks:SideBarLinks[] = [
