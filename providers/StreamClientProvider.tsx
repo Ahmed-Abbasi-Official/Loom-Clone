@@ -48,7 +48,7 @@ const StremVideoProvider = ({children}:{children:ReactNode}) => {
           console.error("Error creating StreamVideoClient:", error);
       }
   }, [user, isLoaded]);
-  if(!isLoaded) return <p>Laoding ...</p>
+  if(!isLoaded) return <Loader/>
   
     
     if(!videoClient) return <Loader/>
