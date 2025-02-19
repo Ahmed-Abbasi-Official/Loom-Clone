@@ -39,11 +39,6 @@ export  const sideBarLinks:SideBarLinks[] = [
         imgUrl:"/icons/upcoming.svg"
     },
     {
-        label:"Previous",
-        route:"/previous",
-        imgUrl:"/icons/previous.svg"
-    },
-    {
         label:"Recordings",
         route:"/recordings",
         imgUrl:"/icons/Video.svg"
